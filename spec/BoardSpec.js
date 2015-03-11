@@ -11,6 +11,7 @@ describe("Board", function() {
     _.map('row col rooks majorDiagonal minorDiagonal queens'.split(' '), function(conflictType){
       var conflictDetected = board['hasAny' + capitalize(conflictType) + 'Conflicts']();
       var conflictExpected = _(expectedConflicts).contains(conflictType);
+      debugger;
       var message = conflictExpected ? 'should' : 'should not';
 
       it(message + " find a " + conflictType + " conflict", function() {
