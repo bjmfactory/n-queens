@@ -94,7 +94,8 @@ window.countNRooksSolutions = function(n) {
     // set the next spot to 1 in prep for testing
     board.get(row)[col] = 1;
     // test the spot for conflicts
-    if (board.hasAnyRowConflicts() || board.hasAnyColConflicts()){
+     if (board.hasAnyRowConflicts() || board.hasAnyColConflicts()){ //has col conflict - row conflict should not happen anyway
+      //if(board.hasColConflictAt(col)) {
       // conflict found
       board.get(row)[col] = 0;
       testSpot(row, col + 1);
